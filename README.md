@@ -2,7 +2,7 @@
 Spring Boot Basic to Advanced. 
 
 # To run using terminal : 
-#### $ sudo apt-get instal maven 
+#### $ sudo apt-get install maven 
 #### $ mvn clean install
 #### $ mvn spring-boot:run 
 
