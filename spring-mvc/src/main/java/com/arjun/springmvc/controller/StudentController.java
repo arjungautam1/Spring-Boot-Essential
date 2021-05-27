@@ -7,7 +7,6 @@ package com.arjun.springmvc.controller;
 
 import com.arjun.springmvc.model.Student;
 import com.arjun.springmvc.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +16,12 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentController {
 
-    @Autowired
+    final
     StudentRepository studentRepository;
+
+    public StudentController(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     /*http://localhost:8080/student/add?name="Arjun"&regNumber=123*/
 
@@ -41,10 +44,9 @@ public class StudentController {
     @ResponseBody
     public String saveStudent(@RequestBody Student student) {
         studentRepository.save(student);
-        int id=student.getId();
-        return "New Student with id "+id+" Added";
+        int id = student.getId();
+        return "New Student with id " + id + " Added";
     }
-
 
 
     @GetMapping("/{id}")
@@ -58,6 +60,18 @@ public class StudentController {
     @ResponseBody
     public List<Student> getStudents() {
         return studentRepository.findAll();
+    }
+
+    /*http://localhost:8080/student/name/arjun*/
+
+
+/*    Query DSL (Domain Specific Language)  ->Querydsl is an extensive Java framework,
+    which helps with creating and running type-safe queries in a domain specific language that is similar to SQL.*/
+
+    @GetMapping("name/{name}")
+    @ResponseBody
+    public List<Student> getStudentByName(@PathVariable("name") String name) {
+        return studentRepository.findByName(name);
     }
 
 }
