@@ -74,4 +74,12 @@ public class StudentController {
         return studentRepository.findByName(name);
     }
 
+    @GetMapping("/reg/{regNumber}")
+    @ResponseBody
+    public List<Student> getStudentByRegNumber(@PathVariable("regNumber") Long regNumber){
+        return studentRepository.findByReg(regNumber);
+    }
+
+
+
 }
