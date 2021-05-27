@@ -18,13 +18,40 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-  StudentRepository studentRepository;
+    StudentRepository studentRepository;
+
+    /*http://localhost:8080/student/add?name="Arjun"&regNumber=123*/
+
+    @PostMapping("/addByParam")
+    @ResponseBody
+    public String addNewStudent(@RequestParam String name, @RequestParam Long regNumber) {
+        Student student = new Student();
+        student.setName(name);
+        student.setRegNumber(regNumber);
+        studentRepository.save(student);
+        return "New Student added";
+    }
+
+    /*{
+    "name": "Arjun Gautam",
+    "regNumber": "1234"
+    }*/
+
+    @PostMapping("/add")
+    @ResponseBody
+    public String saveStudent(@RequestBody Student student) {
+        studentRepository.save(student);
+        int id=student.getId();
+        return "New Student with id "+id+" Added";
+    }
+
+
 
     @GetMapping("/{id}")
     @ResponseBody
-    public Student getStudent(@PathVariable("id") int id){
+    public Student getStudent(@PathVariable("id") int id) {
         return studentRepository.findById(id)
-                .orElseThrow(()->new IllegalArgumentException("Invalid user id:"+id));
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user id:" + id));
     }
 
     @GetMapping("/all")
