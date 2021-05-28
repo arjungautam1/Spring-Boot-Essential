@@ -7,12 +7,11 @@ package com.arjun.springmvc.controller;
 
 import com.arjun.springmvc.model.Student;
 import com.arjun.springmvc.repository.StudentRepository;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/student")
 public class StudentController {
 
@@ -26,7 +25,7 @@ public class StudentController {
     /*http://localhost:8080/student/add?name="Arjun"&regNumber=123*/
 
     @PostMapping("/addByParam")
-    @ResponseBody
+//    @ResponseBody   /*We don't need to use ResponseBody once we use RestController*/
     public String addNewStudent(@RequestParam String name, @RequestParam Long regNumber) {
         Student student = new Student();
         student.setName(name);
@@ -41,23 +40,21 @@ public class StudentController {
     }*/
 
     @PostMapping("/add")
-    @ResponseBody
-    public String saveStudent(@RequestBody Student student) {
+    public Student saveStudent(@RequestBody Student student) {
         studentRepository.save(student);
-        int id = student.getId();
-        return "New Student with id " + id + " Added";
+//        int id = student.getId();
+//        return "New Student with id " + id + " Added";
+        return student;
     }
 
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Student getStudent(@PathVariable("id") int id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user id:" + id));
     }
 
-    @GetMapping("/all")
-    @ResponseBody
+    @GetMapping(value = "/all",produces = {"application/xml"})
     public List<Student> getStudents() {
         return studentRepository.findAll();
     }
@@ -69,13 +66,11 @@ public class StudentController {
     which helps with creating and running type-safe queries in a domain specific language that is similar to SQL.*/
 
     @GetMapping("name/{name}")
-    @ResponseBody
     public List<Student> getStudentByName(@PathVariable("name") String name) {
         return studentRepository.findByName(name);
     }
 
     @GetMapping("/reg/{regNumber}")
-    @ResponseBody
     public List<Student> getStudentByRegNumber(@PathVariable("regNumber") Long regNumber) {
         return studentRepository.findByReg(regNumber);
     }
@@ -84,7 +79,6 @@ public class StudentController {
     /*http://localhost:8080/student/28*/
 
     @DeleteMapping("/{id}")
-    @ResponseBody
     public String deleteStudent(@PathVariable("id") int id) {
         studentRepository.deleteById(id);
         return "deleted student with id :" + id;
@@ -92,7 +86,6 @@ public class StudentController {
     }
 
     @GetMapping("/queryName/{name}")
-    @ResponseBody
     public List<Student> findStudentByName1(@PathVariable("name") String name) {
         return studentRepository.find(name);
     }
