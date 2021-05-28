@@ -90,4 +90,12 @@ public class StudentController {
         return "deleted student with id :" + id;
 
     }
+
+    @GetMapping("/queryName/{name}")
+    @ResponseBody
+    public List<Student> findStudentByName1(@PathVariable("name") String name) {
+        return studentRepository.find(name);
+    }
+
+
 }
