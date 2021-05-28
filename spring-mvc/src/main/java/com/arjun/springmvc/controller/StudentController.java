@@ -76,10 +76,18 @@ public class StudentController {
 
     @GetMapping("/reg/{regNumber}")
     @ResponseBody
-    public List<Student> getStudentByRegNumber(@PathVariable("regNumber") Long regNumber){
+    public List<Student> getStudentByRegNumber(@PathVariable("regNumber") Long regNumber) {
         return studentRepository.findByReg(regNumber);
     }
 
 
+    /*http://localhost:8080/student/28*/
 
+    @DeleteMapping("/{id}")
+    @ResponseBody
+    public String deleteStudent(@PathVariable("id") int id) {
+        studentRepository.deleteById(id);
+        return "deleted student with id :" + id;
+
+    }
 }
