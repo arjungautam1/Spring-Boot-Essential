@@ -39,7 +39,7 @@ public class StudentController {
     "regNumber": "1234"
     }*/
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add",consumes = {"application/json"})
     public Student saveStudent(@RequestBody Student student) {
         studentRepository.save(student);
 //        int id = student.getId();
