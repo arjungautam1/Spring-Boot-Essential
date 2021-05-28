@@ -1,0 +1,53 @@
+2021-05-28 15:59:08.990  INFO 47806 --- [main] c.arjun.springmvc.SpringMvcApplication   : Starting SpringMvcApplication using Java 11.0.10 on arjun-Inspiron-5570 with PID 47806 (/home/arjun/IdeaProjects/SpringBootEssential/spring-mvc/target/classes started by arjun in /home/arjun/IdeaProjects/SpringBootEssential/spring-mvc)
+2021-05-28 15:59:08.994  INFO 47806 --- [main] c.arjun.springmvc.SpringMvcApplication   : No active profile set, falling back to default profiles: default
+2021-05-28 15:59:09.846  INFO 47806 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-28 15:59:09.917  INFO 47806 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interfaces.
+2021-05-28 15:59:10.445  INFO 47806 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-28 15:59:10.452  INFO 47806 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-28 15:59:10.453  INFO 47806 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-05-28 15:59:10.563  INFO 47806 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-28 15:59:10.564  INFO 47806 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1528 ms
+2021-05-28 15:59:10.740  INFO 47806 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-28 15:59:10.780  INFO 47806 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-05-28 15:59:10.887  INFO 47806 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-28 15:59:10.970  INFO 47806 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-28 15:59:11.285  INFO 47806 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-28 15:59:11.298  INFO 47806 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-28 15:59:11.793  INFO 47806 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-28 15:59:11.799  INFO 47806 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-28 15:59:12.260  WARN 47806 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-28 15:59:12.587  INFO 47806 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-28 15:59:12.596  INFO 47806 --- [main] c.arjun.springmvc.SpringMvcApplication   : Started SpringMvcApplication in 4.145 seconds (JVM running for 4.982)
+2021-05-28 15:59:12.597  INFO 47806 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-05-28 15:59:12.598  INFO 47806 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-05-28 16:00:15.701  INFO 47806 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-28 16:00:15.701  INFO 47806 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-28 16:00:15.703  INFO 47806 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-28 16:00:15.733  INFO 47806 --- [http-nio-8080-exec-2] com.arjun.springmvc.aop.LoggingAspect    : Student got.
+2021-05-28 16:02:06.145  INFO 48279 --- [main] c.arjun.springmvc.SpringMvcApplication   : Starting SpringMvcApplication using Java 11.0.10 on arjun-Inspiron-5570 with PID 48279 (/home/arjun/IdeaProjects/SpringBootEssential/spring-mvc/target/classes started by arjun in /home/arjun/IdeaProjects/SpringBootEssential/spring-mvc)
+2021-05-28 16:02:06.148  INFO 48279 --- [main] c.arjun.springmvc.SpringMvcApplication   : No active profile set, falling back to default profiles: default
+2021-05-28 16:02:06.959  INFO 48279 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-28 16:02:07.019  INFO 48279 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2021-05-28 16:02:07.421  INFO 48279 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-28 16:02:07.427  INFO 48279 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-28 16:02:07.427  INFO 48279 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-05-28 16:02:07.507  INFO 48279 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-28 16:02:07.507  INFO 48279 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1298 ms
+2021-05-28 16:02:07.640  INFO 48279 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-28 16:02:07.684  INFO 48279 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-05-28 16:02:07.784  INFO 48279 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-28 16:02:07.857  INFO 48279 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-28 16:02:08.169  INFO 48279 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-28 16:02:08.180  INFO 48279 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-28 16:02:08.620  INFO 48279 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-28 16:02:08.630  INFO 48279 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-28 16:02:09.075  WARN 48279 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-28 16:02:09.350  INFO 48279 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-28 16:02:09.361  INFO 48279 --- [main] c.arjun.springmvc.SpringMvcApplication   : Started SpringMvcApplication in 3.566 seconds (JVM running for 4.221)
+2021-05-28 16:02:09.362  INFO 48279 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-05-28 16:02:09.364  INFO 48279 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-05-28 16:02:14.423  INFO 48279 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-28 16:02:14.424  INFO 48279 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-28 16:02:14.426  INFO 48279 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-28 16:02:14.450  INFO 48279 --- [http-nio-8080-exec-2] com.arjun.springmvc.aop.LoggingAspect    : Student got.
+2021-05-28 16:02:14.510  INFO 48279 --- [http-nio-8080-exec-2] com.arjun.springmvc.aop.LoggingAspect    : Student got using after
