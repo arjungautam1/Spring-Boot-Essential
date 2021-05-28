@@ -6,10 +6,12 @@
 package com.arjun.springsecurity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,21 +20,22 @@ import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableWebSecurity
+@EnableOAuth2Sso
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
+//
+//    @Autowired
+//    private UserDetailsService userDetailsService;
 
-    @Autowired
-    private UserDetailsService userDetailsService;
 
-
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
-        provider.setUserDetailsService(userDetailsService);
-
-        return provider;
+//
+//    @Bean
+//    public AuthenticationProvider authenticationProvider() {
+//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+//        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+//        provider.setUserDetailsService(userDetailsService);
+//
+//        return provider;
 
 
     /*@Bean
@@ -45,5 +48,13 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
         return new InMemoryUserDetailsManager(users);*/
 
 
+    /*OAuth2*/
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .csrf().disable()
+                .authorizeRequests().antMatchers("/login").permitAll()
+                .anyRequest().authenticated();
     }
 }
+
