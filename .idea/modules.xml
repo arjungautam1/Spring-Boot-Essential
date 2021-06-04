@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Boot-Essential.iml" filepath="$PROJECT_DIR$/.idea/Spring-Boot-Essential.iml" />
+      <module fileurl="file://$PROJECT_DIR$/room-clr/room-clr.iml" filepath="$PROJECT_DIR$/room-clr/room-clr.iml" />
       <module fileurl="file://$PROJECT_DIR$/room-web-app/room-web-app.iml" filepath="$PROJECT_DIR$/room-web-app/room-web-app.iml" />
     </modules>
   </component>

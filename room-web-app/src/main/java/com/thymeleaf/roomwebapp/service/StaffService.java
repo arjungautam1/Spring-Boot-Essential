@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class StaffService {
@@ -18,10 +19,10 @@ public class StaffService {
 
     static {
 
-        staff.add(new StaffMember("126", "Pooja", "Poudel", Position.FRONT_DESK));
-        staff.add(new StaffMember("125", "Ram", "Gautam", Position.SECURITY));
-        staff.add(new StaffMember("124", "Arjun", "Gautam", Position.MANAGER));
-        staff.add(new StaffMember("123", "Arjun", "Gautam", Position.HOUSEKEEPING));
+        staff.add(new StaffMember(UUID.randomUUID().toString(), "Pooja", "Poudel", Position.FRONT_DESK));
+        staff.add(new StaffMember(UUID.randomUUID().toString(), "Ram", "Gautam", Position.SECURITY));
+        staff.add(new StaffMember(UUID.randomUUID().toString(), "Arjun", "Gautam", Position.MANAGER));
+        staff.add(new StaffMember(UUID.randomUUID().toString(), "Arjun", "Gautam", Position.HOUSEKEEPING));
 
     }
 
