@@ -5,6 +5,7 @@
  */
 package com.thymeleaf.roomwebapp.models;
 
+
 public class Room {
     private long id;
     private String number;

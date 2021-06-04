@@ -23,9 +23,14 @@ public class StaffRestController {
         this.staffService = staffService;
     }
 
-    @GetMapping()
+    @GetMapping("")
     public List<StaffMember> getAllStaffs() {
         return staffService.getStaff();
+    }
+
+    @GetMapping("/repo")
+    public List<StaffMember> getAll(){
+        return staffService.getAllStaff();
     }
 
 }

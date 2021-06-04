@@ -5,14 +5,25 @@
  */
 package com.thymeleaf.roomwebapp.models;
 
+import javax.persistence.*;
+import java.util.UUID;
 
+@Entity
+@Table(name = "Employee")
 public class StaffMember {
+    @Id
+    @Column(name = "Employee_id")
     private String employeeId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "position")
+    @Enumerated(EnumType.STRING)
     private Position position;
 
     public StaffMember() {
+        this.employeeId= UUID.randomUUID().toString();
     }
 
     public StaffMember(String employeeId, String firstName, String lastName, Position position) {
@@ -21,7 +32,6 @@ public class StaffMember {
         this.lastName = lastName;
         this.position = position;
     }
-
 
 
     public String getEmployeeId() {
