@@ -3,7 +3,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-./src/main/java/com/thymeleaf/roomwebapp/config/AsyncConfig.java
 
 ### STS ###
 .apt_generated
