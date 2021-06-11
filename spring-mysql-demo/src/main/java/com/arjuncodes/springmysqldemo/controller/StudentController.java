@@ -16,23 +16,24 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@RequestMapping("/student")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/students")
+    @GetMapping("/getAll")
     public List<Student> list() {
         return studentService.listAll();
     }
 
-    @PostMapping("/students")
+    @PostMapping("/add")
     public String add(@RequestBody Student student) {
         studentService.save(student);
         return "New Student Added";
     }
 
-    @GetMapping("/student/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Student> get(@PathVariable Integer id) {
         try {
             Student student = studentService.get(id);
@@ -42,7 +43,7 @@ public class StudentController {
         }
     }
 
-    @PutMapping("/students/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Student student, @PathVariable Integer id) {
         try {
             Student existingStudent = studentService.get(id);
@@ -54,7 +55,7 @@ public class StudentController {
 
     }
 
-    @DeleteMapping("/students/{id}")
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable Integer id) {
         studentService.delete(id);
         return "Deleted Student with id:" + id;
